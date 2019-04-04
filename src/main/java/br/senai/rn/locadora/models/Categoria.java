@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="categorias")
-public class Categoria {
+public class Categoria implements Comparable<Categoria>{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,7 @@ public class Categoria {
 	
 	private String nome;
 	private String valor;
+	private Boolean ativo;
 	
 	public Long getId() {
 		return id;
@@ -35,6 +36,13 @@ public class Categoria {
 	}
 	public void setValor(String valor) {
 		this.valor = valor;
+	}
+	
+	public Boolean getAtivo() {
+		return ativo;
+	}
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
 	}
 	@Override
 	public int hashCode() {
@@ -62,6 +70,10 @@ public class Categoria {
 	@Override
 	public String toString() {
 		return "Categoria [id=" + id + ", nome=" + nome + ", valor=" + valor + "]";
+	}
+	@Override
+	public int compareTo(Categoria categoria) {
+		return this.id.compareTo(categoria.id);
 	}
 
 	

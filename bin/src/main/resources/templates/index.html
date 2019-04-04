@@ -15,7 +15,6 @@
 
     <title>Categorias</title>
   </head>
-  
   <body>
     <div class="container">
       <div class="row">
@@ -62,11 +61,6 @@
                       Salvar
                     </button>
                   </div>
-                  <div class="col-6">
-                    <button type="reset" class="btn btn-danger">
-                      Limpar
-                    </button>
-                  </div>
                 </div>
               </div>
             </form>
@@ -84,14 +78,6 @@
                   class="btn btn-success"
                 >
                   <i class="fas fa-edit"></i
-                ></a>
-              </td>
-              <td>
-                <a
-                  th:href="@{/categoria/remover/{id}(id=${categoria.id})}"
-                  class="btn btn-danger"
-                >
-                  <i class="fas fa-trash-alt"></i
                 ></a>
               </td>
             </tr>

@@ -35,7 +35,7 @@ public class CategoriaController {
 	@GetMapping("/remover/{id}")
 	public String delete(@PathVariable Long id, Model model) {
 		service.delete(service.findById(id));
-		return "redirect:/categorias";
+		return "redirect:/categoria";
 	}
 	
 	
