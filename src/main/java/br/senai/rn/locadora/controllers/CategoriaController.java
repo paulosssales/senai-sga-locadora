@@ -39,6 +39,17 @@ public class CategoriaController {
 	}
 	
 	
-	
+	@GetMapping("/editar/{id}")
+	public String editar(@PathVariable Long id, Model model) {
+		model.addAttribute("categoria", service.findById(id));
+		model.addAttribute("categorias", service.findAll());
+		return "index";
+	}
+
+	@PostMapping("/editar/{id}")
+	public String save(@PathVariable Long id, Categoria categoria) {
+		service.save(categoria);
+		return "redirect:/categoria";
+	}
 
 }
